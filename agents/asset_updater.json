@@ -7,13 +7,13 @@
   "allowedTools": ["*"],
 
   "resources": [
-    "file://.kiro/project_assets/*.md",
+    "file://.kiro/project_assets/docs/*.md",
     "file://.asset_update_session.json",
     "file://.last_asset_processed_commit",
     "skill://.kiro/skills/**/SKILL.md",
     {
       "type": "knowledgeBase",
-      "source": "file://project_assets",
+      "source": "file://project_assets/docs",
       "name": "project-assets",
       "indexType": "best",
       "include": ["**/*.md"],

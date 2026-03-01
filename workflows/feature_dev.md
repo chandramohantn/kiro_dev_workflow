@@ -21,8 +21,7 @@ It enforces:
 - Repo contains:
   - agents/
   - templates/
-  - docs/steering/
-  - knowledge/
+  - project_assets/docs/
   - project.md (optional but recommended)
 
 ---
@@ -32,7 +31,7 @@ It enforces:
 ### Step 1: Ingest Jira Ticket → Create Spec
 **Agent:** Jira Ingest  
 **Input:** Jira ticket ID  
-**Output:** docs/specs/<TICKET-ID>.md  
+**Output:** project_assets/specs/<TICKET-ID>/<TICKET-ID>.md  
 
 **Gate:**  
 - Spec exists
@@ -47,8 +46,8 @@ If the spec is unclear or missing critical info:
 
 ### Step 2: Create Implementation Plan
 **Agent:** Planner  
-**Input:** docs/specs/<TICKET-ID>.md  
-**Output:** docs/specs/<TICKET-ID>.plan.md  
+**Input:** project_assets/specs/<TICKET-ID>/<TICKET-ID>.md  
+**Output:** project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md  
 
 **Gate:**  
 - Plan covers all acceptance criteria
@@ -64,8 +63,8 @@ If the plan exposes spec issues:
 ### Step 3: Implement the Feature
 **Agent:** Implementer  
 **Input:**  
-- docs/specs/<TICKET-ID>.md  
-- docs/specs/<TICKET-ID>.plan.md  
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md  
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md  
 **Output:** Code changes in repo  
 
 **Gate:**  
@@ -82,10 +81,10 @@ If blockers appear:
 ### Step 4: Review the Implementation
 **Agent:** Reviewer  
 **Input:**  
-- Spec
-- Plan
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md
 - Code changes  
-**Output:** Review report (PASS / NEEDS_CHANGES)  
+**Output:** project_assets/specs/<TICKET-ID><TICKET-ID>.review.md (Review report - PASS / NEEDS_CHANGES)
 
 **Gate:**  
 - If PASS → continue  
@@ -98,8 +97,8 @@ This loop can repeat until review passes.
 ### Step 5: Add / Update Tests
 **Agent:** Tester  
 **Input:**  
-- Spec (acceptance criteria)
-- Plan
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md (acceptance criteria)
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md
 - Code  
 **Output:** Test changes in repo  
 
@@ -117,11 +116,11 @@ If tests reveal bugs:
 ### Step 6: Verify Against Acceptance Criteria
 **Agent:** Verifier  
 **Input:**  
-- Spec
-- Plan
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md 
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md
 - Code
 - Tests  
-**Output:** Verification report with AC checklist  
+**Output:** project_assets/specs/<TICKET-ID>/<TICKET-ID>.verify.md  (Verification report with AC checklist)
 
 **Gate:**  
 - Each AC is marked: Met / Partially Met / Not Met
@@ -135,8 +134,8 @@ If critical ACs are not met:
 ### Step 7: Update Jira Ticket
 **Agent:** Jira Updater  
 **Input:**  
-- Verification report
-- Spec
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.verify.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md
 - (Optional) GitLab MCP info  
 **Output:** Comment posted to Jira ticket  
 
@@ -152,12 +151,12 @@ If critical ACs are not met:
 ### Step 8: Write Project Notes
 **Agent:** Notes Writer  
 **Input:**  
-- Spec
-- Plan
-- Verification report
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.verify.md
 - (Optional) Jira comment / GitLab info  
 **Output:**  
-- notes/<YYYY-MM-DD>-<TICKET-ID>-<short-title>.md  
+- project_assets/notes/<YYYY-MM-DD>-<TICKET-ID>-<short-title>.md  
 
 **Gate:**  
 - Note explains:

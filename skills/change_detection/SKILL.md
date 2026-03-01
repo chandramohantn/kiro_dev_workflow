@@ -240,6 +240,8 @@ Options:
 
 Then STOP.
 Do NOT proceed to content generation.
+Save the spec as: 
+- project_assets/specs/<short-title>-<change>.md
 
 
 # Failure Conditions

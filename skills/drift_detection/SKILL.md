@@ -9,7 +9,7 @@ description: Detects structural inconsistencies across repository domains and ge
 
 This skill detects structural inconsistencies ("drift") across repository domains and writes results to:
 
-project_profile/drift_report.md
+project_assets/docs/drift_report.md
 
 This skill does NOT:
 - Modify architecture assets
@@ -65,7 +65,7 @@ If insufficient data exists:
 Analyze current repository state.
 
 You may inspect:
-- project_profile/*.md
+- project_assets/docs/*.md
 - services/*
 - Dockerfile
 - docker-compose.yml

@@ -70,12 +70,12 @@ If approved_changes is null:
 
 You may update ONLY the following files:
 
-- project_profile/api_contracts.md
-- project_profile/db_schema.md
-- project_profile/architecture.md
-- project_profile/docker_deployment.md
-- project_profile/etl_flows.md
-- project_profile/graph_schema.md
+- project_assets/docs/api_contracts.md
+- project_assets/docs/db_schema.md
+- project_assets/docs/architecture.md
+- project_assets/docs/docker_deployment.md
+- project_assets/docs/etl_flows.md
+- project_assets/docs/graph_schema.md
 
 You must NOT:
 - Create new files
@@ -242,6 +242,8 @@ Options:
 
 THEN STOP.
 Do NOT proceed to patch-application.
+Save the spec as: 
+- project_assets/specs/<short-title>-<content>.md
 
 # Failure Conditions
 If:

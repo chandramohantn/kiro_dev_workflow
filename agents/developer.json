@@ -14,9 +14,9 @@
       "file://.kiro/personas/*.md",
       "file://.kiro/workflows/*.md",
       "file://.kiro/templates/*.md",
-      "file://.kiro/project_profile/docs/steering/*.md",
-      "file://.kiro/project_profile/knowledge/*.md",
-      "file://.kiro/project_profile/notes/*.md",
+      "file://.kiro/project_assets/docs/*.md",
+      "file://.kiro/project_assets/rules/*.md",
+      "file://.kiro/project_assets/notes/*.md",
       {
         "type": "knowledgeBase",
         "source": "file://core",
@@ -37,23 +37,7 @@
       },
       {
         "type": "knowledgeBase",
-        "source": "file://docs",
-        "name": "project-knowledge",
-        "indexType": "best",
-        "include": ["**/*.md"],
-        "autoUpdate": true
-      },
-      {
-        "type": "knowledgeBase",
-        "source": "file://project_profile/docs/steering",
-        "name": "steering-rules",
-        "indexType": "best",
-        "include": ["**/*.md"],
-        "autoUpdate": true
-      },
-      {
-        "type": "knowledgeBase",
-        "source": "file://project_profile/notes",
+        "source": "file://project_assets/notes",
         "name": "project-history",
         "indexType": "best",
         "include": ["**/*.md"],

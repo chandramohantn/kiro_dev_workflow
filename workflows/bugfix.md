@@ -21,8 +21,7 @@ It enforces:
 - Repo contains:
   - agents/
   - templates/
-  - docs/steering/
-  - knowledge/
+  - project_assets/docs/
   - project.md (optional but recommended)
 
 ---
@@ -32,7 +31,7 @@ It enforces:
 ### Step 1: Ingest Jira Ticket → Create Spec
 **Agent:** Jira Ingest  
 **Input:** Jira ticket ID  
-**Output:** docs/specs/<TICKET-ID>.md  
+**Output:** project_assets/specs/<TICKET-ID>/<TICKET-ID>.md
 
 **Gate:**  
 - Spec clearly describes:
@@ -51,8 +50,8 @@ If reproduction steps are missing or unclear:
 
 ### Step 2: Create Fix Plan
 **Agent:** Planner  
-**Input:** docs/specs/<TICKET-ID>.md  
-**Output:** docs/specs/<TICKET-ID>.plan.md  
+**Input:** project_assets/specs/<TICKET-ID>/<TICKET-ID>.md  
+**Output:** project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md
 
 **Gate:**  
 - Plan includes:
@@ -66,8 +65,8 @@ If reproduction steps are missing or unclear:
 ### Step 3: Write Regression Test (Reproduce the Bug)
 **Agent:** Tester  
 **Input:**  
-- Spec
-- Plan
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md
 - Current code  
 **Output:**  
 - A new or updated test that:
@@ -89,8 +88,8 @@ If the bug cannot be reproduced in a test:
 ### Step 4: Implement the Fix
 **Agent:** Implementer  
 **Input:**  
-- Spec
-- Plan
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md
 - Failing test  
 **Output:** Code changes that fix the bug  
 
@@ -104,11 +103,11 @@ If the bug cannot be reproduced in a test:
 ### Step 5: Review the Fix
 **Agent:** Reviewer  
 **Input:**  
-- Spec
-- Plan
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md
 - Code changes
 - Tests  
-**Output:** Review report (PASS / NEEDS_CHANGES)  
+**Output:** project_assets/specs/<TICKET-ID>/<TICKET-ID>.review.md (Review report - PASS / NEEDS_CHANGES)  
 
 **Gate:**  
 - If PASS → continue  
@@ -119,11 +118,11 @@ If the bug cannot be reproduced in a test:
 ### Step 6: Verify Against Acceptance Criteria
 **Agent:** Verifier  
 **Input:**  
-- Spec
-- Plan
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md
 - Code
 - Tests  
-**Output:** Verification report with AC checklist  
+**Output:** project_assets/specs/<TICKET-ID>/<TICKET-ID>.verify.md (Verification report with AC checklist)  
 
 **Gate:**  
 - Bug is marked as fixed (AC met)
@@ -138,8 +137,8 @@ If AC is not fully met:
 ### Step 7: Update Jira Ticket
 **Agent:** Jira Updater  
 **Input:**  
-- Verification report
-- Spec
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.verify.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md
 - (Optional) GitLab MCP info  
 **Output:** Comment posted to Jira ticket  
 
@@ -155,9 +154,9 @@ If AC is not fully met:
 ### Step 8: Write Project Notes
 **Agent:** Notes Writer  
 **Input:**  
-- Spec
-- Plan
-- Verification report
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.plan.md
+- project_assets/specs/<TICKET-ID>/<TICKET-ID>.verify.md
 - (Optional) Jira comment / GitLab info  
 **Output:**  
 - notes/<YYYY-MM-DD>-<TICKET-ID>-<short-title>.md  

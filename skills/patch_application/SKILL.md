@@ -81,7 +81,7 @@ Rules:
 - No unknown files
 - No unknown block names
 - Content must not be null
-- File paths must be within project_profile/
+- File paths must be within project_assets/
 
 If validation fails:
 - Abort
