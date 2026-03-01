@@ -1,14 +1,17 @@
 import os
 import json
+from datetime import datetime
 
 DOCS_DIR = "project_assets/docs"
 PENDING_FILE = ".bootstrap_pending_content.json"
+REVIEW_DIR = "project_assets/docs/asset_bootstrap/"
+REVIEW_FILE = os.path.join(REVIEW_DIR, "bootstrap_review_spec.md")
 
 REQUIRED_FILES = [
     "architecture.md",
     "db_schema.md",
     "api_contracts.md",
-    "docker_deployment.md",
+    "deployment.md",
     "etl_flows.md",
     "graph_schema.md"
 ]
@@ -25,7 +28,11 @@ def run(generated_content: dict):
     validate_generated_structure(generated_content)
 
     persist_pending_content(generated_content)
-    render_preview(generated_content)
+    persist_pending_content(generated_content)
+
+    print("\nReview spec created at:")
+    print("project_assets/review/bootstrap_review_spec.md")
+    print("\nPlease review and confirm before writing.\n")
 
 
 # ---------------------------
@@ -84,16 +91,35 @@ def persist_pending_content(data: dict):
 # Preview
 # ---------------------------
 
-def render_preview(data: dict):
-    print("\n================ PREVIEW ================\n")
+def generate_review_spec(data: dict):
+    os.makedirs(REVIEW_DIR, exist_ok=True)
 
-    for filename, doc in data.items():
-        print(f"----- {filename} -----\n")
+    now = datetime.utcnow().isoformat() + "Z"
 
-        for block_name, content in doc["blocks"].items():
-            print(f"[{block_name}]\n")
-            print(content)
-            print("\n")
+    with open(REVIEW_FILE, "w", encoding="utf-8") as f:
+        f.write("# Bootstrap Documentation Review Spec\n\n")
+        f.write(f"Generated At: {now}\n\n")
+        f.write("No files have been modified yet.\n\n")
+        f.write("---\n\n")
+
+        f.write("## Document Summary\n\n")
+        f.write("| Document | Confidence |\n")
+        f.write("|----------|------------|\n")
+
+        for filename, doc in data.items():
+            confidence = doc["metadata"]["confidence"]
+            f.write(f"| {filename} | {confidence} |\n")
+
+        f.write("\n---\n\n")
+        f.write("## Proposed AUTO Block Content\n\n")
+
+        for filename, doc in data.items():
+            f.write(f"---\n\n")
+            f.write(f"### {filename}\n\n")
+
+            for block_name, content in doc["blocks"].items():
+                f.write(f"#### {block_name}\n\n")
+                f.write(content.strip() + "\n\n")
 
     print("=========================================\n")
     print("Do you approve creation of these documentation assets?")

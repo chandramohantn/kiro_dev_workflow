@@ -73,7 +73,7 @@ You may update ONLY the following files:
 - project_assets/docs/api_contracts.md
 - project_assets/docs/db_schema.md
 - project_assets/docs/architecture.md
-- project_assets/docs/docker_deployment.md
+- project_assets/docs/deployment.md
 - project_assets/docs/etl_flows.md
 - project_assets/docs/graph_schema.md
 
@@ -97,7 +97,7 @@ Map domain → asset file:
 - api → api_contracts.md
 - db → db_schema.md
 - architecture → architecture.md
-- deployment → docker_deployment.md
+- deployment → deployment.md
 - etl → etl_flows.md
 - graph → graph_schema.md
 
@@ -174,12 +174,20 @@ You MUST produce ONLY the following JSON structure:
       "BEGIN_AUTO_DIAGRAM": "markdown content or null",
       "BEGIN_AUTO_CHANGE_SUMMARY": "markdown content or null"
     },
-    "project_assets/docker_deployment.md": {
-      "BEGIN_AUTO_SERVICES": "markdown content or null",
-      "BEGIN_AUTO_ENV": "markdown content or null",
+    "project_assets/deployment.md": {
+      "BEGIN_AUTO_ENVIRONMENT_OVERVIEW": "markdown content or null",
+      "BEGIN_AUTO_DEPLOYMENT_UNITS": "markdown content or null",
+      "BEGIN_AUTO_INFRA_COMPONENTS": "markdown content or null",
+      "BEGIN_AUTO_SERVICE_EXPOSURE": "markdown content or null",
+      "BEGIN_AUTO_CICD_PIPELINE": "markdown content or null",
+      "BEGIN_AUTO_CONFIG_MANAGEMENT": "markdown content or null",
+      "BEGIN_AUTO_RUNTIME_DEPENDENCIES": "markdown content or null",
       "BEGIN_AUTO_DEP_GRAPH": "markdown content or null",
+      "BEGIN_AUTO_SCALING_MODEL": "markdown content or null",
+      "BEGIN_AUTO_OBSERVABILITY": "markdown content or null",
       "BEGIN_AUTO_RISK": "markdown content or null",
-      "BEGIN_AUTO_ROLLBACK": "markdown content or null"
+      "BEGIN_AUTO_ROLLBACK": "markdown content or null",
+      "BEGIN_AUTO_DEPLOYMENT_DRIFT": "markdown content or null"
     },
     "project_assets/etl_flows.md": {
       "BEGIN_AUTO_PIPELINES": "markdown content or null",
@@ -243,7 +251,7 @@ Options:
 THEN STOP.
 Do NOT proceed to patch-application.
 Save the spec as: 
-- project_assets/specs/<short-title>-<content>.md
+- project_assets/specs/asset_updater/<short-title>-<content>.md
 
 # Failure Conditions
 If:

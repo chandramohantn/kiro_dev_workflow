@@ -127,7 +127,7 @@ You must write ALL of the following:
 - architecture.md
 - db_schema.md
 - api_contracts.md
-- docker_deployment.md
+- deployment.md
 - etl_flows.md
 - graph_schema.md
 

@@ -79,6 +79,8 @@ You may analyze:
 - Graph-related files
 - ETL-related directories
 - Config files
+- ansible files
+- ci/cd files
 
 You must build a structural understanding of:
 - Services
@@ -101,7 +103,7 @@ Files include:
 - architecture.md
 - db_schema.md
 - api_contracts.md
-- docker_deployment.md
+- deployment.md
 - etl_flows.md
 - graph_schema.md
 
@@ -164,17 +166,25 @@ You MUST return ONLY the following JSON structure:
     }
   },
 
-  "docker_deployment.md": {
+  "deployment.md": {
     "metadata": {
       "last_updated": "ISO8601 UTC",
       "confidence": 0.0-1.0
     },
     "blocks": {
-      "BEGIN_AUTO_SERVICES": "markdown",
-      "BEGIN_AUTO_ENV": "markdown",
+      "BEGIN_AUTO_ENVIRONMENT_OVERVIEW": "markdown",
+      "BEGIN_AUTO_DEPLOYMENT_UNITS": "markdown",
+      "BEGIN_AUTO_INFRA_COMPONENTS": "markdown",
+      "BEGIN_AUTO_SERVICE_EXPOSURE": "markdown",
+      "BEGIN_AUTO_CICD_PIPELINE": "markdown",
+      "BEGIN_AUTO_CONFIG_MANAGEMENT": "markdown",
+      "BEGIN_AUTO_RUNTIME_DEPENDENCIES": "markdown",
       "BEGIN_AUTO_DEP_GRAPH": "markdown",
+      "BEGIN_AUTO_SCALING_MODEL": "markdown",
+      "BEGIN_AUTO_OBSERVABILITY": "markdown",
       "BEGIN_AUTO_RISK": "markdown",
-      "BEGIN_AUTO_ROLLBACK": "markdown"
+      "BEGIN_AUTO_ROLLBACK": "markdown",
+      "BEGIN_AUTO_DEPLOYMENT_DRIFT": "markdown"
     }
   },
 

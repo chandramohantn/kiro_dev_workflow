@@ -132,6 +132,8 @@ From changed files, extract:
 - Port changes
 - Image changes
 - Environment variable changes
+- CI/CD changes
+- Ansible services
 
 ### ETL Domain
 - Pipelines added/modified/removed
@@ -182,7 +184,8 @@ You MUST produce ONLY the following JSON structure:
       "services_added": [],
       "services_removed": [],
       "ports_changed": [],
-      "env_changed": []
+      "env_changed": [],
+      "ci/cd_changes": []
     },
     "etl": {
       "pipelines_added": [],
@@ -241,7 +244,7 @@ Options:
 Then STOP.
 Do NOT proceed to content generation.
 Save the spec as: 
-- project_assets/specs/<short-title>-<change>.md
+- project_assets/specs/asset_updater/<short-title>-<change>.md
 
 
 # Failure Conditions

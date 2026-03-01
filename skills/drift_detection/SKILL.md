@@ -9,7 +9,7 @@ description: Detects structural inconsistencies across repository domains and ge
 
 This skill detects structural inconsistencies ("drift") across repository domains and writes results to:
 
-project_assets/docs/drift_report.md
+project_assets/docs/asset_updater/drift_report.md
 
 This skill does NOT:
 - Modify architecture assets
@@ -119,6 +119,7 @@ Detect mismatches such as:
 - docker-compose service references non-existent build context
 - Environment variable referenced in code but not declared in deployment file
 - Dockerfile missing for declared service
+- CI/CD stage references non-existent stages
 
 ---
 
