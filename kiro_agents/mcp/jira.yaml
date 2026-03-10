@@ -1,0 +1,26 @@
+name: jira
+
+description: |
+  Jira MCP server running inside a Docker container.
+
+command: docker
+
+args:
+  - run
+  - --rm
+  - -p
+  - "8090:8090"
+  - -e
+  - JIRA_BASE_URL=${JIRA_BASE_URL}
+  - -e
+  - JIRA_PROJECT_KEY=${JIRA_PROJECT_KEY}
+  - -e
+  - JIRA_USERNAME=${JIRA_USERNAME}
+  - -e
+  - JIRA_API_TOKEN=${JIRA_API_TOKEN}
+  - jira-mcp-server:latest
+
+capabilities:
+  - ticket_read
+  - ticket_update
+  - comment_update

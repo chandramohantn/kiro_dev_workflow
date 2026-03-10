@@ -1,0 +1,24 @@
+name: agent_jira
+
+description: |
+  Integrates Jira ticket workflows with the multi-agent development system.
+
+skills:
+  - ticket parsing
+  - requirement extraction
+  - structured requirement generation
+  - ticket updates
+
+domains:
+  - project management integration
+  - requirement analysis
+
+responsibilities:
+  - retrieve Jira ticket details
+  - convert ticket into structured requirement schema
+  - update Jira ticket comments
+  - report development results
+
+excludes:
+  - implementing code
+  - writing tests

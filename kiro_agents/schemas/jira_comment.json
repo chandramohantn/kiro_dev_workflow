@@ -1,0 +1,31 @@
+{
+    "type": "object",
+    "title": "JiraCommentUpdate",
+    "description": "Structured comment format used when updating Jira tickets.",
+    "properties": {
+      "ticket_id": {
+        "type": "string"
+      },
+      "development_summary": {
+        "type": "string"
+      },
+      "implementation_details": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "tests_added": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "review_status": {
+        "type": "string"
+      },
+      "next_steps": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "ticket_id",
+      "development_summary"
+    ]
+  }

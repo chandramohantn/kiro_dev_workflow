@@ -6,8 +6,11 @@ version: 1
 
 agents:
 
-agent_planner:
-  path: agents/agent_planner
+  agent_jira:
+    path: agents/workers/agent_jira
+
+  agent_planner:
+    path: agents/planner/agent_planner
   
   agent_coordinator:
     path: agents/coordinator/agent_coordinator
@@ -61,6 +64,8 @@ mcp_servers:
   terminal:
     config: mcp/terminal.yaml
 
+  jira:
+    config: mcp/jira.yaml
 
 # ---------------------------------------------------
 # SYSTEM DOCUMENTS
@@ -76,6 +81,9 @@ system_documents:
 
   self_validation:
     path: prompts/coordinator_self_validation.md
+
+  planner_reasoning:
+    path: prompts/planner_reasoning_guide.md
 
 
 # ---------------------------------------------------
@@ -126,3 +134,10 @@ schemas:
 
   agent_execution_contract:
     path: schemas/agent_task_execution_contract.md
+
+  jira_requirement:
+    path: schemas/jira_requirement.json
+
+  jira_comment:
+    path: schemas/jira_comment.json
+
