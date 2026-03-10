@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "title": "ImplementationSpecification",
+    "description": "Specification describing how a feature or change should be implemented.",
+    "properties": {
+      "feature_summary": {
+        "type": "string"
+      },
+      "affected_components": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "files_to_modify": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "files_to_create": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "database_changes": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "api_changes": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "testing_strategy": {
+        "type": "string"
+      },
+      "risks": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "required": [
+      "feature_summary",
+      "affected_components",
+      "files_to_modify",
+      "testing_strategy"
+    ]
+  }

@@ -6,8 +6,14 @@ version: 1
 
 agents:
 
+agent_planner:
+  path: agents/agent_planner
+  
   agent_coordinator:
     path: agents/coordinator/agent_coordinator
+
+  agent_spec:
+    path: agents/agent_spec
 
   agent_code:
     path: agents/workers/agent_code
@@ -102,6 +108,9 @@ schemas:
 
   execution_plan:
     path: schemas/execution_plan.json
+
+  implementation_spec:
+    path: schemas/implementation_spec.json
 
   task:
     path: schemas/task.json
