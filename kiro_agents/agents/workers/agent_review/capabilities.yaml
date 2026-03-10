@@ -1,0 +1,17 @@
+name: agent_review
+
+description: |
+  Performs code quality reviews and identifies potential issues.
+
+skills:
+  - code review
+  - quality analysis
+  - design critique
+
+domains:
+  - software quality
+  - engineering best practices
+
+excludes:
+  - implementing code
+  - writing tests

@@ -1,0 +1,18 @@
+name: agent_architecture
+
+description: |
+  Responsible for system architecture analysis and design decisions.
+
+skills:
+  - system design
+  - architectural evaluation
+  - scalability analysis
+  - dependency analysis
+
+domains:
+  - architecture
+  - system design
+
+excludes:
+  - implementing code
+  - writing tests

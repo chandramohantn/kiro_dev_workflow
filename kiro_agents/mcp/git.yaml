@@ -1,0 +1,18 @@
+name: git
+
+description: |
+  Provides access to Git repository operations.
+  Useful for inspecting commit history, diffs, and repository metadata.
+
+command: npx
+
+args:
+  - -y
+  - "@modelcontextprotocol/server-git"
+
+capabilities:
+  - commit_history
+  - diff_analysis
+  - repository_inspection
+
+timeout: 30000

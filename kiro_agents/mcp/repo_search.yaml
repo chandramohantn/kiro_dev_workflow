@@ -1,0 +1,16 @@
+name: repo_search
+
+description: |
+  Provides semantic search across the repository.
+  Allows agents to locate relevant files, functions, and code patterns.
+
+command: python
+
+args:
+  - tools/repo_search_server.py
+
+capabilities:
+  - code_search
+  - semantic_search
+
+timeout: 30000

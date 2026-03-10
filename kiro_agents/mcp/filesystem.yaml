@@ -1,0 +1,18 @@
+name: filesystem
+
+description: |
+  Provides access to the local filesystem.
+  Allows reading, writing, and modifying files in the project workspace.
+
+command: npx
+
+args:
+  - -y
+  - "@modelcontextprotocol/server-filesystem"
+
+capabilities:
+  - file_read
+  - file_write
+  - file_list
+
+timeout: 30000

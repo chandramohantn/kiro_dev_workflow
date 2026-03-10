@@ -1,0 +1,119 @@
+version: 1
+
+# ---------------------------------------------------
+# AGENT CONFIGURATION
+# ---------------------------------------------------
+
+agents:
+
+  agent_coordinator:
+    path: agents/coordinator/agent_coordinator
+
+  agent_code:
+    path: agents/workers/agent_code
+
+  agent_test:
+    path: agents/workers/agent_test
+
+  agent_debug:
+    path: agents/workers/agent_debug
+
+  agent_review:
+    path: agents/workers/agent_review
+
+  agent_architecture:
+    path: agents/workers/agent_architecture
+
+  agent_document:
+    path: agents/workers/agent_document
+
+
+# ---------------------------------------------------
+# MCP SERVERS
+# ---------------------------------------------------
+
+mcp_servers:
+
+  filesystem:
+    config: mcp/filesystem.yaml
+
+  git:
+    config: mcp/git.yaml
+
+  context7:
+    config: mcp/context7.yaml
+
+  fetch:
+    config: mcp/fetch.yaml
+
+  repo_search:
+    config: mcp/repo_search.yaml
+
+  sequential_thinking:
+    config: mcp/sequential_thinking.yaml
+
+  terminal:
+    config: mcp/terminal.yaml
+
+
+# ---------------------------------------------------
+# SYSTEM DOCUMENTS
+# ---------------------------------------------------
+
+system_documents:
+
+  architecture:
+    path: ARCHITECTURE.md
+
+  planning_heuristics:
+    path: prompts/task_planning_heuristics.md
+
+  self_validation:
+    path: prompts/coordinator_self_validation.md
+
+
+# ---------------------------------------------------
+# POLICIES
+# ---------------------------------------------------
+
+policies:
+
+  delegation:
+    path: policies/delegation.md
+
+  tool_usage:
+    path: policies/tool_usage.md
+
+  task_splitting:
+    path: policies/task_splitting.md
+
+  context_limits:
+    path: policies/context_limits.md
+
+  failure_recovery:
+    path: policies/failure_recovery_and_replanning.md
+
+
+# ---------------------------------------------------
+# SCHEMAS
+# ---------------------------------------------------
+
+schemas:
+
+  execution_plan:
+    path: schemas/execution_plan.json
+
+  task:
+    path: schemas/task.json
+
+  agent_result:
+    path: schemas/agent_result.json
+
+  workflow_state:
+    path: schemas/workflow_state.json
+
+  task_context_template:
+    path: schemas/task_context_template.md
+
+  agent_execution_contract:
+    path: schemas/agent_task_execution_contract.md

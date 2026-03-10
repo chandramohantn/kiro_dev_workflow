@@ -1,0 +1,32 @@
+{
+    "type": "object",
+    "title": "Task",
+    "description": "Represents a single task in an execution plan.",
+    "properties": {
+      "task_id": {
+        "type": "string",
+        "description": "Unique identifier for the task."
+      },
+      "agent": {
+        "type": "string",
+        "description": "Name of the specialized agent responsible for executing the task."
+      },
+      "description": {
+        "type": "string",
+        "description": "Clear description of the task objective."
+      },
+      "dependencies": {
+        "type": "array",
+        "description": "List of task IDs that must be completed before this task begins.",
+        "items": {
+          "type": "string"
+        }
+      },
+      "priority": {
+        "type": "string",
+        "enum": ["low", "medium", "high"],
+        "description": "Optional task priority."
+      }
+    },
+    "required": ["task_id", "agent", "description"]
+  }

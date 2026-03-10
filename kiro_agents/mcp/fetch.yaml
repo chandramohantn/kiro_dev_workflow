@@ -1,0 +1,17 @@
+name: fetch
+
+description: |
+  Fetches content from web URLs.
+  Useful for retrieving documentation, articles, or reference material.
+
+command: npx
+
+args:
+  - -y
+  - "@modelcontextprotocol/server-fetch"
+
+capabilities:
+  - web_fetch
+  - external_content_retrieval
+
+timeout: 30000

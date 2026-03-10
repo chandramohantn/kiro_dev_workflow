@@ -1,0 +1,18 @@
+name: context7
+
+description: |
+  Provides access to library and framework documentation.
+  Useful for retrieving official documentation for programming libraries,
+  APIs, and frameworks.
+
+command: npx
+
+args:
+  - -y
+  - "@context7/mcp-server"
+
+capabilities:
+  - documentation_lookup
+  - library_reference
+
+timeout: 30000

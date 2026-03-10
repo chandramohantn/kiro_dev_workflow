@@ -1,0 +1,17 @@
+name: terminal
+
+description: |
+  Executes shell commands in the development environment.
+  Useful for running tests, build commands, and diagnostics.
+
+command: npx
+
+args:
+  - -y
+  - "@modelcontextprotocol/server-shell"
+
+capabilities:
+  - command_execution
+  - environment_interaction
+
+timeout: 30000

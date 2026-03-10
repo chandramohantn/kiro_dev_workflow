@@ -1,0 +1,17 @@
+name: sequential_thinking
+
+description: |
+  Enables structured step-by-step reasoning.
+  Useful for complex planning, debugging analysis, and architectural reasoning.
+
+command: npx
+
+args:
+  - -y
+  - "@modelcontextprotocol/server-sequential-thinking"
+
+capabilities:
+  - structured_reasoning
+  - planning_support
+
+timeout: 30000

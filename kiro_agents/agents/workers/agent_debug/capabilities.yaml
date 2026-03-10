@@ -1,0 +1,18 @@
+name: agent_debug
+
+description: |
+  Performs root cause analysis for system failures.
+
+skills:
+  - error investigation
+  - stack trace analysis
+  - runtime diagnostics
+  - regression analysis
+
+domains:
+  - debugging
+  - diagnostics
+
+excludes:
+  - implementing fixes
+  - writing tests

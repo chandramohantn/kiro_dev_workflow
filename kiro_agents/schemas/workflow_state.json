@@ -1,0 +1,43 @@
+{
+    "type": "object",
+    "title": "WorkflowState",
+    "description": "Tracks the execution state of a multi-agent workflow.",
+    "properties": {
+      "workflow_id": {
+        "type": "string",
+        "description": "Unique identifier for the workflow session."
+      },
+      "completed_tasks": {
+        "type": "array",
+        "description": "Tasks that have successfully completed.",
+        "items": {
+          "type": "string"
+        }
+      },
+      "pending_tasks": {
+        "type": "array",
+        "description": "Tasks waiting to be executed.",
+        "items": {
+          "type": "string"
+        }
+      },
+      "failed_tasks": {
+        "type": "array",
+        "description": "Tasks that failed during execution.",
+        "items": {
+          "type": "string"
+        }
+      },
+      "retry_counts": {
+        "type": "object",
+        "description": "Tracks retry attempts for each task.",
+        "additionalProperties": {
+          "type": "integer"
+        }
+      },
+      "current_task": {
+        "type": "string",
+        "description": "Task currently being executed."
+      }
+    }
+  }

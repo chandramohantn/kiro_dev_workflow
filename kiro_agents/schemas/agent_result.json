@@ -1,0 +1,46 @@
+{
+    "type": "object",
+    "title": "AgentResult",
+    "description": "Structured result returned by a specialized agent after completing a task.",
+    "properties": {
+      "task_id": {
+        "type": "string",
+        "description": "Identifier of the task that was executed."
+      },
+      "agent": {
+        "type": "string",
+        "description": "Name of the agent that executed the task."
+      },
+      "status": {
+        "type": "string",
+        "enum": ["SUCCESS", "PARTIAL_SUCCESS", "FAILED"],
+        "description": "Completion status of the task."
+      },
+      "summary": {
+        "type": "string",
+        "description": "Brief summary of the work performed."
+      },
+      "artifacts": {
+        "type": "array",
+        "description": "Files created or modified during the task.",
+        "items": {
+          "type": "string"
+        }
+      },
+      "issues": {
+        "type": "array",
+        "description": "Issues encountered during execution.",
+        "items": {
+          "type": "string"
+        }
+      },
+      "recommendations": {
+        "type": "array",
+        "description": "Optional suggestions for follow-up work.",
+        "items": {
+          "type": "string"
+        }
+      }
+    },
+    "required": ["task_id", "agent", "status"]
+  }

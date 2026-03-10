@@ -1,0 +1,20 @@
+name: agent_code
+
+description: |
+  Implements and modifies source code within the repository.
+
+skills:
+  - feature implementation
+  - bug fixing
+  - code refactoring
+  - configuration updates
+
+domains:
+  - backend development
+  - API development
+  - infrastructure code
+
+excludes:
+  - writing tests
+  - architecture design
+  - documentation writing

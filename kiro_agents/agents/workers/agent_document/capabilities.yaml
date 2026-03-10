@@ -1,0 +1,16 @@
+name: agent_document
+
+description: |
+  Produces technical documentation for systems and features.
+
+skills:
+  - documentation writing
+  - API documentation
+  - developer guides
+
+domains:
+  - documentation
+
+excludes:
+  - coding
+  - debugging
