@@ -9,6 +9,9 @@ agents:
   agent_jira:
     path: agents/workers/agent_jira
 
+  agent_mr_reviewer:
+    path: agents/mr_reviewer/agent_mr_reviewer
+
   agent_planner:
     path: agents/planner/agent_planner
   
@@ -66,6 +69,9 @@ mcp_servers:
 
   jira:
     config: mcp/jira.yaml
+
+  gitlab:
+    config: mcp/gitlab.yaml
 
 # ---------------------------------------------------
 # SYSTEM DOCUMENTS
@@ -141,3 +147,5 @@ schemas:
   jira_comment:
     path: schemas/jira_comment.json
 
+  mr_review:
+    path: schemas/mr_review.json

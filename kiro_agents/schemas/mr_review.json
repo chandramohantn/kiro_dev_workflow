@@ -1,0 +1,29 @@
+{
+    "type": "object",
+    "title": "MergeRequestReview",
+    "properties": {
+      "mr_url": { "type": "string" },
+      "summary": { "type": "string" },
+      "domains_detected": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "commit_quality": {
+        "type": "string"
+      },
+      "mr_size_evaluation": {
+        "type": "string"
+      },
+      "issues": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "recommendations": {
+        "type": "array",
+        "items": { "type": "string" }
+      },
+      "overall_assessment": {
+        "type": "string"
+      }
+    }
+  }
