@@ -6,6 +6,21 @@ version: 1
 
 agents:
 
+  agent_architecture:
+    path: agents/workers/agent_architecture
+
+  agent_code:
+    path: agents/workers/agent_code
+
+  agent_coordinator:
+    path: agents/coordinator/agent_coordinator
+
+  agent_debug:
+    path: agents/workers/agent_debug
+
+  agent_document:
+    path: agents/workers/agent_document
+
   agent_jira:
     path: agents/workers/agent_jira
 
@@ -15,29 +30,14 @@ agents:
   agent_planner:
     path: agents/planner/agent_planner
   
-  agent_coordinator:
-    path: agents/coordinator/agent_coordinator
+  agent_review:
+    path: agents/workers/agent_review
 
   agent_spec:
     path: agents/agent_spec
 
-  agent_code:
-    path: agents/workers/agent_code
-
   agent_test:
     path: agents/workers/agent_test
-
-  agent_debug:
-    path: agents/workers/agent_debug
-
-  agent_review:
-    path: agents/workers/agent_review
-
-  agent_architecture:
-    path: agents/workers/agent_architecture
-
-  agent_document:
-    path: agents/workers/agent_document
 
 
 # ---------------------------------------------------
@@ -46,17 +46,23 @@ agents:
 
 mcp_servers:
 
+  context7:
+    config: mcp/context7.yaml
+
+  fetch:
+    config: mcp/fetch.yaml
+
   filesystem:
     config: mcp/filesystem.yaml
 
   git:
     config: mcp/git.yaml
 
-  context7:
-    config: mcp/context7.yaml
+  gitlab:
+    config: mcp/gitlab.yaml
 
-  fetch:
-    config: mcp/fetch.yaml
+  jira:
+    config: mcp/jira.yaml
 
   repo_search:
     config: mcp/repo_search.yaml
@@ -67,11 +73,6 @@ mcp_servers:
   terminal:
     config: mcp/terminal.yaml
 
-  jira:
-    config: mcp/jira.yaml
-
-  gitlab:
-    config: mcp/gitlab.yaml
 
 # ---------------------------------------------------
 # SYSTEM DOCUMENTS
@@ -82,14 +83,14 @@ system_documents:
   architecture:
     path: ARCHITECTURE.md
 
-  planning_heuristics:
-    path: prompts/task_planning_heuristics.md
-
-  self_validation:
+  coordinator_self_validation:
     path: prompts/coordinator_self_validation.md
 
   planner_reasoning:
     path: prompts/planner_reasoning_guide.md
+
+  task_planning_heuristics:
+    path: prompts/task_planning_heuristics.md
 
 
 # ---------------------------------------------------
@@ -98,20 +99,20 @@ system_documents:
 
 policies:
 
+  context_limits:
+    path: policies/context_limits.md
+
   delegation:
     path: policies/delegation.md
 
-  tool_usage:
-    path: policies/tool_usage.md
+  failure_recovery:
+    path: policies/failure_recovery_and_replanning.md
 
   task_splitting:
     path: policies/task_splitting.md
 
-  context_limits:
-    path: policies/context_limits.md
-
-  failure_recovery:
-    path: policies/failure_recovery_and_replanning.md
+  tool_usage:
+    path: policies/tool_usage.md
 
 
 # ---------------------------------------------------
@@ -120,32 +121,35 @@ policies:
 
 schemas:
 
+  agent_result:
+    path: schemas/agent_result.json
+
   execution_plan:
     path: schemas/execution_plan.json
 
   implementation_spec:
     path: schemas/implementation_spec.json
 
-  task:
-    path: schemas/task.json
-
-  agent_result:
-    path: schemas/agent_result.json
-
-  workflow_state:
-    path: schemas/workflow_state.json
-
-  task_context_template:
-    path: schemas/task_context_template.md
-
-  agent_execution_contract:
-    path: schemas/agent_task_execution_contract.md
+  jira_comment:
+    path: schemas/jira_comment.json
 
   jira_requirement:
     path: schemas/jira_requirement.json
 
-  jira_comment:
-    path: schemas/jira_comment.json
-
   mr_review:
     path: schemas/mr_review.json
+
+  task:
+    path: schemas/task.json
+
+  task_context_template:
+    path: schemas/task_context_template.md
+
+  task_execution_contract:
+    path: schemas/task_execution_contract.md
+
+  workflow_state:
+    path: schemas/workflow_state.json
+
+  workflow_template:
+    path: schemas/workflow_template.json
