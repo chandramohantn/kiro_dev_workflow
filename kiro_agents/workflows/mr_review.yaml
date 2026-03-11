@@ -1,0 +1,10 @@
+workflow_name: "Merge Request Review"
+
+stages:
+
+  - stage_id: S1
+    name: "MR Semantic Review"
+    agent: agent_mr_reviewer
+    checkpoint: AFTER
+    outputs:
+      - review_report

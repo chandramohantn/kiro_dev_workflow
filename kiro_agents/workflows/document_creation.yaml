@@ -1,0 +1,14 @@
+workflow_name: "Documentation Creation"
+
+stages:
+
+  - stage_id: S1
+    name: "Information Gathering"
+    agent: agent_spec
+    checkpoint: AFTER
+
+  - stage_id: S2
+    name: "Documentation Writing"
+    agent: agent_document
+    depends_on: [S1]
+    checkpoint: AFTER

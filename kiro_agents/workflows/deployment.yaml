@@ -1,0 +1,20 @@
+workflow_name: "Deployment"
+
+stages:
+
+  - stage_id: S1
+    name: "Deployment Plan"
+    agent: agent_architecture
+    checkpoint: AFTER
+
+  - stage_id: S2
+    name: "CI/CD Configuration"
+    agent: agent_code
+    depends_on: [S1]
+    checkpoint: AFTER
+
+  - stage_id: S3
+    name: "Deployment Validation"
+    agent: agent_test
+    depends_on: [S2]
+    checkpoint: AFTER

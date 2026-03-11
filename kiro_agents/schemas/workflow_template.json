@@ -1,0 +1,27 @@
+{
+    "type": "object",
+    "properties": {
+      "workflow_name": { "type": "string" },
+      "description": { "type": "string" },
+      "stages": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "stage_id": { "type": "string" },
+            "name": { "type": "string" },
+            "agent": { "type": "string" },
+            "checkpoint": { "type": "string" },
+            "depends_on": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "outputs": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          }
+        }
+      }
+    }
+  }

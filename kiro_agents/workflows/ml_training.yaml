@@ -1,0 +1,51 @@
+workflow_name: "ML Model Training"
+
+description: |
+  Workflow for training machine learning models including
+  data preparation, model training, evaluation, and deployment readiness.
+
+stages:
+
+  - stage_id: S1
+    name: "Training Specification"
+    agent: agent_spec
+    checkpoint: AFTER
+    outputs:
+      - training_specification
+      - dataset_requirements
+
+  - stage_id: S2
+    name: "Model Training Implementation"
+    agent: agent_code
+    depends_on: [S1]
+    checkpoint: AFTER
+    outputs:
+      - training_pipeline
+      - training_configuration
+
+  - stage_id: S3
+    name: "Model Evaluation"
+    agent: agent_test
+    depends_on: [S2]
+    checkpoint: AFTER
+    outputs:
+      - evaluation_metrics
+      - validation_report
+
+  - stage_id: S4
+    name: "Deployment Readiness Review"
+    agent: agent_architecture
+    depends_on: [S3]
+    checkpoint: AFTER
+    outputs:
+      - deployment_recommendations
+      - infrastructure_requirements
+
+  - stage_id: S5
+    name: "Training Documentation"
+    agent: agent_document
+    depends_on: [S4]
+    checkpoint: AFTER
+    outputs:
+      - model_documentation
+      - experiment_summary

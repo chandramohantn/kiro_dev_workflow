@@ -1,0 +1,27 @@
+workflow_name: "ETL Pipeline Development"
+
+description: |
+  Design and implementation workflow for ETL pipelines.
+
+stages:
+
+  - stage_id: S1
+    name: "Pipeline Design"
+    agent: agent_architecture
+    checkpoint: AFTER
+    outputs:
+      - pipeline_design
+
+  - stage_id: S2
+    name: "Pipeline Implementation"
+    agent: agent_code
+    depends_on: [S1]
+    checkpoint: AFTER
+    outputs:
+      - etl_pipeline_code
+
+  - stage_id: S3
+    name: "Data Validation Tests"
+    agent: agent_test
+    depends_on: [S2]
+    checkpoint: AFTER

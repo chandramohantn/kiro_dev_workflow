@@ -1,0 +1,47 @@
+workflow_name: "Feature Development"
+
+description: |
+  End-to-end workflow for implementing a new feature with
+  specification, development, testing, review and documentation.
+
+stages:
+
+  - stage_id: S1
+    name: "Specification"
+    agent: agent_spec
+    checkpoint: AFTER
+    outputs:
+      - implementation_spec
+
+  - stage_id: S2
+    name: "Implementation"
+    agent: agent_code
+    depends_on: [S1]
+    checkpoint: AFTER
+    outputs:
+      - source_code
+      - unit_tests
+
+  - stage_id: S3
+    name: "Testing"
+    agent: agent_test
+    depends_on: [S2]
+    checkpoint: AFTER
+    outputs:
+      - test_results
+
+  - stage_id: S4
+    name: "Internal Review"
+    agent: agent_review
+    depends_on: [S3]
+    checkpoint: AFTER
+    outputs:
+      - review_feedback
+
+  - stage_id: S5
+    name: "Documentation"
+    agent: agent_document
+    depends_on: [S4]
+    checkpoint: AFTER
+    outputs:
+      - updated_docs

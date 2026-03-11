@@ -1,0 +1,41 @@
+workflow_name: "ETL Pipeline Design"
+
+description: |
+  Workflow for designing ETL pipelines including data sources,
+  transformations, storage targets, and operational considerations.
+
+stages:
+
+  - stage_id: S1
+    name: "Requirements Analysis"
+    agent: agent_spec
+    checkpoint: AFTER
+    outputs:
+      - data_requirements
+      - transformation_requirements
+
+  - stage_id: S2
+    name: "Pipeline Architecture Design"
+    agent: agent_architecture
+    depends_on: [S1]
+    checkpoint: AFTER
+    outputs:
+      - pipeline_architecture
+      - component_design
+
+  - stage_id: S3
+    name: "Data Validation Strategy"
+    agent: agent_test
+    depends_on: [S2]
+    checkpoint: AFTER
+    outputs:
+      - validation_rules
+      - testing_strategy
+
+  - stage_id: S4
+    name: "Design Review"
+    agent: agent_review
+    depends_on: [S3]
+    checkpoint: AFTER
+    outputs:
+      - design_review_feedback

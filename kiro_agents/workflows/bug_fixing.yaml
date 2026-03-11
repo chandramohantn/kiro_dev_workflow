@@ -1,0 +1,35 @@
+workflow_name: "Bug Fixing"
+
+description: |
+  Workflow for debugging and fixing issues.
+
+stages:
+
+  - stage_id: S1
+    name: "Root Cause Analysis"
+    agent: agent_debug
+    checkpoint: AFTER
+    outputs:
+      - root_cause_analysis
+
+  - stage_id: S2
+    name: "Fix Implementation"
+    agent: agent_code
+    depends_on: [S1]
+    checkpoint: AFTER
+    outputs:
+      - bug_fix
+
+  - stage_id: S3
+    name: "Regression Testing"
+    agent: agent_test
+    depends_on: [S2]
+    checkpoint: AFTER
+    outputs:
+      - regression_results
+
+  - stage_id: S4
+    name: "Review"
+    agent: agent_review
+    depends_on: [S3]
+    checkpoint: AFTER

@@ -1,0 +1,32 @@
+workflow_name: "Documentation Update"
+
+description: |
+  Workflow for updating project documentation based on recent
+  development changes, feature additions, or architecture updates.
+
+stages:
+
+  - stage_id: S1
+    name: "Identify Documentation Impact"
+    agent: agent_spec
+    checkpoint: AFTER
+    outputs:
+      - impacted_docs
+      - documentation_update_plan
+
+  - stage_id: S2
+    name: "Documentation Update"
+    agent: agent_document
+    depends_on: [S1]
+    checkpoint: AFTER
+    outputs:
+      - updated_documents
+      - changelog_entry
+
+  - stage_id: S3
+    name: "Documentation Review"
+    agent: agent_review
+    depends_on: [S2]
+    checkpoint: AFTER
+    outputs:
+      - documentation_review_feedback

@@ -162,6 +162,20 @@ FAILED
 
 ---
 
+# Workflow Mode Selection
+
+For simple requests requiring only one agent:
+- Skip formal execution plan
+- Delegate directly to appropriate agent
+- Return result immediately
+
+For complex requests requiring multiple agents or stages:
+- Follow full structured workflow
+- Generate execution plan
+- Apply self-validation
+
+---
+
 # Execution Workflow
 
 You must follow this workflow.

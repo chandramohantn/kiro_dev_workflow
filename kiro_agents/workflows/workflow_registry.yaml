@@ -1,0 +1,10 @@
+bug_fixing: workflows/bug_fixing.yaml
+deployment: workflows/deployment.yaml
+document_creation: workflows/document_creation.yaml
+document_updation: workflows/document_updation.yaml
+etl_pipeline_design: workflows/etl_pipeline_design.yaml
+etl_pipeline_development: workflows/etl_pipeline_development.yaml
+feature_development: workflows/feature_development.yaml
+ml_training: workflows/ml_training.yaml
+mr_review: workflows/mr_review.yaml
+documentation: workflows/documentation_creation.yaml
