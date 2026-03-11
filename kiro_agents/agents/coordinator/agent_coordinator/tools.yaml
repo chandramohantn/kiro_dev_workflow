@@ -1,3 +1,4 @@
 tools:
   - sequential_thinking
   - fetch
+  - use_subagent
