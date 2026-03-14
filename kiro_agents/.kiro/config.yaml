@@ -25,7 +25,7 @@ agents:
     path: agents/workers/agent_jira
 
   agent_mr_reviewer:
-    path: agents/mr_reviewer/agent_mr_reviewer
+    path: agents/workers/agent_mr_reviewer
 
   agent_planner:
     path: agents/planner/agent_planner
@@ -34,7 +34,7 @@ agents:
     path: agents/workers/agent_review
 
   agent_spec:
-    path: agents/agent_spec
+    path: agents/workers/agent_spec
 
   agent_test:
     path: agents/workers/agent_test
