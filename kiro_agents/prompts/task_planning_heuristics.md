@@ -1,6 +1,6 @@
-# Task Planning Heuristics for Coordinator Agent
+# Task Planning Heuristics
 
-This document defines planning heuristics that guide the coordinator agent when decomposing tasks and assigning specialized agents.
+This document defines planning heuristics that guide **agent_planner** when decomposing tasks and assigning specialized agents.
 
 These heuristics ensure that task planning is efficient, stable, and aligned with real-world engineering workflows.
 
@@ -10,7 +10,7 @@ These heuristics ensure that task planning is efficient, stable, and aligned wit
 
 Plan work the way an experienced technical lead would coordinate a team of engineers.
 
-The coordinator must:
+The planner must:
 
 * Minimize unnecessary complexity
 * Avoid over-decomposition
@@ -271,7 +271,7 @@ Do not create redundant investigation tasks.
 
 # Summary
 
-When planning tasks, the coordinator should:
+When planning tasks, the planner should:
 
 1. Understand the user request
 2. Identify required expertise domains

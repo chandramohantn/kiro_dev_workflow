@@ -1,18 +1,18 @@
-# Coordinator Self-Validation Layer
+# Plan Self-Validation Layer
 
-This document defines the self-validation process that the coordinator agent must perform after generating an execution plan and before delegating tasks to sub-agents.
+This document defines the self-validation process that **agent_planner** must perform after generating an execution plan and before handing it to the coordinator for execution.
 
 The purpose of this validation layer is to ensure that execution plans are correct, minimal, and stable.
 
-The coordinator must behave like a **technical lead reviewing a task plan before assigning work to engineers**.
+The planner must behave like a **technical lead reviewing a task plan before assigning work to engineers**.
 
 ---
 
 # Self-Validation Process
 
-After generating an execution plan, the coordinator must review the plan using the validation checklist below.
+After generating an execution plan, the planner must review the plan using the validation checklist below.
 
-If any issues are detected, the coordinator must revise the plan before execution.
+If any issues are detected, the planner must revise the plan before output.
 
 The validation process consists of five checks:
 
@@ -130,7 +130,7 @@ If the plan is too complex:
 
 # Validation Output
 
-After validation, the coordinator must confirm that the plan passes validation.
+After validation, the planner must confirm that the plan passes validation.
 
 Example:
 
@@ -150,15 +150,15 @@ If any check fails, revise the execution plan before proceeding.
 
 # Self-Validation Philosophy
 
-This validation process ensures that the coordinator behaves like an experienced engineering leader.
+This validation process ensures that the planner produces reliable execution plans.
 
-Before assigning work, the coordinator must confirm that:
+Before outputting a plan, the planner must confirm that:
 
-* the correct engineers are assigned
+* the correct agents are assigned
 * the tasks are necessary
 * the order of execution is logical
 * the plan is minimal and efficient
 
-The coordinator is responsible for maintaining stability across the entire multi-agent workflow.
+The planner is responsible for plan quality. The coordinator trusts that received plans are validated.
 
-No tasks should be delegated until the execution plan passes validation.
+No plan should be handed to the coordinator until it passes validation.
