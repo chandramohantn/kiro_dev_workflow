@@ -1,21 +1,35 @@
 name: agent_planner
 
 description: |
-  Responsible for generating execution plans for engineering tasks.
+  Designs and validates execution plans for engineering tasks.
+  Owns all planning logic including heuristics and self-validation.
+  Produces validated plans consumed by the coordinator for execution.
 
 skills:
+  - requirement analysis
   - task decomposition
   - workflow planning
   - dependency analysis
+  - agent selection
+  - plan validation
 
 domains:
   - engineering workflow design
+  - task planning
 
 responsibilities:
-  - analyze user requests
-  - generate execution plans
-  - assign tasks to agents
+  - analyze structured requirements or user requests
+  - identify required expertise domains
+  - decompose work into minimal tasks
+  - assign tasks to appropriate agents based on expertise
+  - apply planning heuristics 
+  - perform plan self-validation 
+  - produce validated execution plans
 
 excludes:
   - executing tasks
+  - delegating tasks to agents
+  - generating task context
+  - managing workflow state
+  - failure recovery
   - implementing code
