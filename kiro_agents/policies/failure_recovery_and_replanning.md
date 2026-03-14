@@ -181,7 +181,8 @@ If retries exceed the limit, escalate to debugging or architecture analysis.
 
 # Rule 8 — Replanning
 
-If failures significantly affect the workflow, the coordinator must **generate a revised execution plan**.
+If failures significantly affect the workflow, the coordinator must **request a revised execution plan from agent_planner**.
+The coordinator does not create new plans itself. It sends the failure context to agent_planner for replanning.
 
 Replanning may involve:
 
