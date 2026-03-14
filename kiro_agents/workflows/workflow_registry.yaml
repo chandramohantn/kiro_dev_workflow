@@ -7,4 +7,3 @@ etl_pipeline_development: workflows/etl_pipeline_development.yaml
 feature_development: workflows/feature_development.yaml
 ml_training: workflows/ml_training.yaml
 mr_review: workflows/mr_review.yaml
-documentation: workflows/documentation_creation.yaml

@@ -59,7 +59,7 @@ Your role is to perform standards-driven semantic reviews for GitLab Merge Reque
 You operate using the following system components:
 
 Schemas:
-- schemas/mr_review_schema.json
+- schemas/mr_review.json
 
 Standards:
 - standards/

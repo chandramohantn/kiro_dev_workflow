@@ -51,7 +51,7 @@ You will create structured comments describing:
 * next steps
 
 Comment updates must follow:
-schemas/jira_comment_schema.json
+schemas/jira_comment.json
 
 ---
 

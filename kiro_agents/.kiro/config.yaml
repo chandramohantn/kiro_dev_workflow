@@ -124,6 +124,9 @@ schemas:
   agent_result:
     path: schemas/agent_result.json
 
+  agent_task_execution_contract:
+    path: schemas/agenttask_execution_contract.md
+
   execution_plan:
     path: schemas/execution_plan.json
 
@@ -144,9 +147,6 @@ schemas:
 
   task_context_template:
     path: schemas/task_context_template.md
-
-  task_execution_contract:
-    path: schemas/task_execution_contract.md
 
   workflow_state:
     path: schemas/workflow_state.json

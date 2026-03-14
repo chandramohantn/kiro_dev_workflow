@@ -237,7 +237,7 @@ Workflow state includes:
 Defined in:
 
 ```
-schemas/workflow_state_schema.json
+schemas/workflow_state.json
 ```
 
 This allows the coordinator to function as a **workflow engine rather than a simple planner**.

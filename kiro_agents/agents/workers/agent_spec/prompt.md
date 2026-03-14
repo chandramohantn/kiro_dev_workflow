@@ -74,7 +74,7 @@ Your role ends after the specification is produced.
 # Output Format
 
 Your response must follow the Implementation Specification Schema:
-schemas/implementation_spec_schema.json
+schemas/implementation_spec.json
 
 The specification should include:
 
