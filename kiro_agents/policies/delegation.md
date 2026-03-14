@@ -40,6 +40,12 @@ Responsible for reviewing code quality.
 agent_document
 Responsible for documentation generation.
 
+agent_spec
+Responsible for creating implementation specifications before development begins
+
+agent_jira
+Responsible for extracting structured requirements from Jira tickets and updating tickets after development.
+
 ---
 
 # Delegation Rules
@@ -76,6 +82,18 @@ Documentation tasks must be assigned to **agent_document**.
 
 ---
 
+### Rule 6 — Specification Tasks
+
+Implementation specification and design planning tasks must be assigned to **agent_spec**.
+
+---
+
+### Rule 7 — Jira Integration Tasks
+
+Jira ticket extraction and ticket update tasks must be assigned to **agent_jira**.
+
+---
+
 # Avoid Delegation Errors
 
 The coordinator must avoid the following mistakes:
@@ -83,6 +101,8 @@ The coordinator must avoid the following mistakes:
 • assigning code tasks to architecture agents
 • assigning debugging tasks to code agents
 • assigning testing tasks to code agents
+• assigning Jira tasks to non-Jira agents
+• assigning specification tasks to agent_code
 
 Each task must clearly match the capabilities of the assigned agent.
 
