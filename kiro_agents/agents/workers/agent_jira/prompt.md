@@ -33,7 +33,7 @@ When reading a Jira ticket you must extract:
 * constraints
 
 The output must follow:
-schemas/jira_requirement_schema.json
+schemas/jira_requirement.json
 
 This structured requirement will be passed to the planner agent.
 

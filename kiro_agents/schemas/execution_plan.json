@@ -11,7 +11,7 @@
         "type": "array",
         "description": "List of tasks that must be executed.",
         "items": {
-          "$ref": "./task_schema.json"
+          "$ref": "./task.json"
         }
       }
     },

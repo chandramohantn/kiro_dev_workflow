@@ -53,7 +53,7 @@ prompts/task_planning_heuristics.md
 # Output Format
 
 Execution plans must follow:
-schemas/execution_plan_schema.json
+schemas/execution_plan.json
 
 Plans should be minimal and typically contain **1–5 tasks**.
 

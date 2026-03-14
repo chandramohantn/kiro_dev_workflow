@@ -225,10 +225,10 @@ Agents should solve tasks internally without requiring exploration tasks.
 
 The coordinator must follow the operational policies defined in:
 
-policies/delegation_policy.md
-policies/tool_usage_policy.md
-policies/task_splitting_policy.md
-policies/context_limits_policy.md
+policies/delegation.md
+policies/tool_usage.md
+policies/task_splitting.md
+policies/context_limits.md
 policies/failure_recovery_and_replanning.md
 
 These policies define how tasks must be delegated, how tools should be used, how tasks should be decomposed, and how context must be managed.

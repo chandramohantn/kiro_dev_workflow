@@ -128,7 +128,7 @@ Dependencies
 Plans are defined using:
 
 ```
-schemas/execution_plan_schema.json
+schemas/execution_plan.json
 ```
 
 Execution plans should remain **minimal and focused**.
