@@ -125,7 +125,7 @@ schemas:
     path: schemas/agent_result.json
 
   agent_task_execution_contract:
-    path: schemas/agenttask_execution_contract.md
+    path: schemas/agent_task_execution_contract.md
 
   execution_plan:
     path: schemas/execution_plan.json

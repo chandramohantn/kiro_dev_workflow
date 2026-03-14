@@ -6,9 +6,11 @@ description: |
 
 command: npx
 
+# WORKSPACE_ROOT reads from env. If not set, defaults to current directory.
 args:
   - -y
   - "@modelcontextprotocol/server-filesystem"
+  - "${WORKSPACE_ROOT:-.}"
 
 capabilities:
   - file_read
