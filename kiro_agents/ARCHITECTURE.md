@@ -38,22 +38,53 @@ Each layer serves a distinct purpose.
 
 Agents represent specialized engineering roles.
 
+## Planner Agent
+
+The **agent_planner** designs and validates execution plans.
+
+Responsibilities: 
+
+* analyze requirements (from agent_jira or user)
+* identify required expertise domains
+* decompose work into minimal tasks
+* assign tasks to appropriate agents
+* apply planning heuristics
+* perform plan self-validation
+* produce validated execution plans
+
+The planner behaves like a **Staff Engineer designing a work breakdown**.
+The planner does NOT execute tasks or manage workflow state.
+
+---
+
 ## Coordinator Agent
 
-The **coordinator agent** orchestrates the entire workflow.
+The **coordinator agent** executes validated plans produced by the planner.
 
 Responsibilities:
 
-* analyze user requests
-* create execution plans
-* validate plans
-* generate structured task context
-* delegate tasks
-* aggregate results
-* perform failure recovery
-* update workflow state
+* receive validated execution plans
+* generate structured task context for sub-agents
+* delegate tasks to specialized agents
+* trace workflow state
+* aggregate agent results
+* handle failure recovery
+* request replanning from agent_planner when needed
 
-The coordinator behaves like a **technical lead managing an engineering team**.
+The coordinator behaves like a **Technical lead executing a pre-approved work plan**.
+The coordinator deos NOT create execution plans.
+
+---
+
+## Workflow Entry Points
+
+The system follows explicit entry points: 
+
+Jira Ticket Flow:
+Jira Ticket -> agent_jira (extract requirements) -> agent_planner (create plan) -> agent_coordinator (validate + execute)
+
+Direct Request Flow:
+User Request -> agent_planner (create plan) -> agent_coordinator (validate + execute)
 
 ---
 
@@ -69,6 +100,8 @@ agent_debug
 agent_review
 agent_architecture
 agent_document
+agent_jira
+agent_spec
 
 Each agent is self-contained and defined in:
 
@@ -90,15 +123,19 @@ The system executes workflows using a structured lifecycle.
 
 Workflow pipeline:
 
-User Request
+User Request or Jira Ticket
 ↓
-Coordinator analyzes request
+agent_jira extracts structured requirements (if Jira ticket)
 ↓
-Coordinator generates execution plan
+agent_planner analyzes requirements
+↓
+agent_planner generates execution plan
 ↓
 Plan validated via self-validation layer
 ↓
-Task contexts generated
+Validated plan handed to agent_coordinator
+↓
+Coordinator generates task contexts
 ↓
 Tasks delegated to specialized agents
 ↓
@@ -111,6 +148,8 @@ Coordinator updates workflow state
 Coordinator determines next task
 ↓
 Workflow continues until completion
+↓
+If failure requires replanning -> coordinator requests revised plan from agent_planner
 
 ---
 
@@ -256,9 +295,9 @@ Policies ensure consistent system behavior.
 
 # Planning Heuristics
 
-Planning heuristics guide the coordinator when creating execution plans.
+Planning heuristics guide **agent_planner** when creating execution plans.
 
-Heuristics help the coordinator:
+Heuristics help the planner:
 
 * avoid unnecessary tasks
 * choose correct agents
@@ -275,7 +314,7 @@ prompts/task_planning_heuristics.md
 
 # Self-Validation Layer
 
-Before executing any plan, the coordinator performs a validation step.
+Before handing a plan to the coordinator, the **agent_planner** performs a validation step.
 
 The validation process checks:
 
@@ -291,7 +330,7 @@ Defined in:
 prompts/coordinator_self_validation.md
 ```
 
-Only validated plans are executed.
+Only validated plans are passed to the coordinator for execution.
 
 ---
 
