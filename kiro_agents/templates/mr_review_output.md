@@ -82,6 +82,23 @@ If no suggestions:
     None identified.
 (Use lighter-weight structure without mandatory refactoring example.)
 
+---
+
+## Prior Review Follow-up
+
+If this is the first review:
+> No prior review context available. This is the first review round.
+
+If prior review comments or a prior review artifact exist, list each previously raised item:
+
+| # | Prior Issue Summary | Source | Status | Notes |
+|---|---------------------|--------|--------|-------|
+| 1 | <Brief description of prior issue> | <GitLab comment / Prior artifact> | ✅ RESOLVED / ⚠️ PARTIALLY_ADDRESSED / ❌ UNRESOLVED | <Brief explanation> |
+
+**Summary:** <X of Y prior issues resolved, Z remain open.>
+
+---
+
 ### Domain-wise Observations
 Only include sections for domains that were identified.
 
