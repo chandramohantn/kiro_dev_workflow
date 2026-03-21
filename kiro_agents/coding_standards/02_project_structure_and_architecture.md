@@ -144,21 +144,6 @@ All production systems must follow layered architecture.
     - Training code must not be imported by inference modules
     - Inference must not depend on training logic
 
-- 4.4 MCP Server Structure
-    ```
-    mcp/
-    ├── protocol/
-    ├── handlers/
-    ├── services/
-    ├── repositories/
-    ├── config/
-    └── tests/
-    ```
-
-    Rules:
-    - Protocol handling separated from business logic
-    - Handlers must call services
-    - No DB logic in protocol layer
 
 5. Dependency Direction Rules
 Dependencies must follow this rule:

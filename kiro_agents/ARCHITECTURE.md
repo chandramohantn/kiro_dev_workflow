@@ -28,7 +28,6 @@ The system is composed of five primary layers:
 2. Schemas
 3. Policies
 4. Prompts
-5. MCP Tooling
 
 Each layer serves a distinct purpose.
 
@@ -334,29 +333,6 @@ Only validated plans are passed to the coordinator for execution.
 
 ---
 
-# Tooling (MCP Servers)
-
-Agents interact with external systems using MCP tools.
-
-Examples include:
-
-filesystem
-repo_search
-context7
-terminal
-git
-sequential_thinking
-
-Tool access is restricted per agent and defined in:
-
-```
-agents/<agent>/tools.yaml
-```
-
-The coordinator agent has minimal tool access to maintain focus on orchestration.
-
----
-
 # Context Management
 
 To maintain efficient reasoning:
@@ -420,8 +396,6 @@ kiro-agents
 ├── policies/
 │
 ├── prompts/
-│
-├── mcp/
 │
 └── ARCHITECTURE.md
 ```
