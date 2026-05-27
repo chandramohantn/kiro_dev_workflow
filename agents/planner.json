@@ -35,13 +35,7 @@
     "file://.kiro/workflows/document_creation.yaml",
     "file://.kiro/workflows/document_updation.yaml"
   ],
-  "mcpServers": {
-    "sequential_thinking": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
-      "timeout": 30000
-    }
-  },
+  "mcpServers": {},
   "hooks": {},
   "toolsSettings": {},
   "useLegacyMcpJson": false

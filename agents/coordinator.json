@@ -10,10 +10,7 @@
     "fs_read",
     "grep",
     "glob",
-    "knowledge",
-    "use_subagent",
-    "@sequential_thinking/*",
-    "@fetch/*"
+    "use_subagent"
   ],
   "resources": [
     "file://.kiro/schemas/execution_plan.md",
@@ -31,24 +28,7 @@
     "file://.kiro/policies/context_limits.md",
     "file://.kiro/prompts/coordinator_self_validation.md"
   ],
-  "mcpServers": {
-    "sequential_thinking": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-sequential-thinking"
-      ],
-      "timeout": 30000
-    },
-    "fetch": {
-      "command": "npx",
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-fetch"
-      ],
-      "timeout": 30000
-    }
-  },
+  "mcpServers": {},
   "hooks": {},
   "toolsSettings": {},
   "useLegacyMcpJson": false

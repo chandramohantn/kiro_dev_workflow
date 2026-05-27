@@ -9,29 +9,14 @@
     "execute_bash",
     "grep",
     "glob",
-    "code",
-    "knowledge",
-    "@terminal/*",
-    "@git/*",
-    "@repo_search/*"
+    "code"
   ],
   "resources": [
     "file://.kiro/schemas/task_context_template.md",
     "file://.kiro/schemas/agent_task_execution_contract.md",
     "file://.kiro/schemas/debug_report.md"
   ],
-  "mcpServers": {
-    "terminal": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-shell"],
-      "timeout": 30000
-    },
-    "git": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-git"],
-      "timeout": 30000
-    }
-  },
+  "mcpServers": {},
   "hooks": {},
   "toolsSettings": {},
   "useLegacyMcpJson": false

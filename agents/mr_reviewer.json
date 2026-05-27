@@ -9,12 +9,7 @@
     "fs_write",
     "grep",
     "glob",
-    "code",
-    "knowledge",
-    "@gitlab/*",
-    "@repo_search/*",
-    "@context7/*",
-    "@sequential_thinking/*"
+    "code"
   ],
   "resources": [
     "file://.kiro/templates/mr_review_output.md",
@@ -42,16 +37,6 @@
         "-e", "GITLAB_PROJECT_ID=${GITLAB_PROJECT_ID}",
         "gitlab-mcp-server:latest"
       ],
-      "timeout": 30000
-    },
-    "context7": {
-      "command": "npx",
-      "args": ["-y", "@context7/mcp-server"],
-      "timeout": 30000
-    },
-    "sequential_thinking": {
-      "command": "npx",
-      "args": ["-y", "@modelcontextprotocol/server-sequential-thinking"],
       "timeout": 30000
     }
   },

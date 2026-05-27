@@ -8,7 +8,6 @@
     "fs_read",
     "grep",
     "glob",
-    "knowledge",
     "@jira/*"
   ],
   "resources": [
